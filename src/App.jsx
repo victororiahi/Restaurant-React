@@ -9,6 +9,7 @@ import Reservation from './Reservation.jsx'
 import Testimonial from './Testimonial.jsx'
 import Contact from './Contact.jsx'
 import Footer from './Footer.jsx'
+import ScrollToTop from './ScrollToTop.jsx'
 
 
 function App() {
@@ -17,12 +18,13 @@ function App() {
   return (
     <>
       <Nav/>
-      {/* <Hero/> */}
+      <Hero/>
       <About/>
       <Reservation/>
       <Testimonial/>
       <Contact/>
       <Footer/>
+      <ScrollToTop/>
 
 
     </>

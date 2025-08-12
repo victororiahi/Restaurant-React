@@ -1,6 +1,15 @@
-
+import { initScripts } from './scripts.js';
+import { useEffect } from 'react';
+import 'swiper/css';
+import './styles.css';
+import dish1 from './assets/dish1.webp';
+import dish2 from './assets/dish2.webp';
+import dish3 from './assets/dish3.jpg';
 
 function Hero() {
+    useEffect(() => {
+        initScripts();
+    }, []);
     return (
         
                <section className="hero-slider">
@@ -9,7 +18,7 @@ function Hero() {
             <div className="swiper-wrapper">
 
                 
-                <div className="swiper-slide slide" style="background-image: url('Assets/hero-dish1.webp');">
+                <div className="swiper-slide slide" style= {{backgroundImage: `url(${dish1})`}}>
                     <div className="slide-content">
                         <h1>Experience the delightful taste of Africa</h1>
                         <p>A celebration of culture in every plate</p>
@@ -17,7 +26,7 @@ function Hero() {
                 </div>
 
                
-                <div className="swiper-slide slide" style = "background-image: url('Assets/hero-dish2.webp');">
+                <div className="swiper-slide slide" style = {{backgroundImage: `url(${dish2})`}}>
                     <div className="slide-content">
                         <h1>Make every meal special</h1>
                         <p>Where Afro-fusion meets fine dining</p>
@@ -25,7 +34,7 @@ function Hero() {
                 </div>
 
                 
-                <div className="swiper-slide slide" style="background-image: url('Assets/hero-dish3.jpg');">
+                <div className="swiper-slide slide" style= {{backgroundImage: `url(${dish3})`}}>
                     <div className="slide-content">
                         <h1>Taste the difference!</h1>
                         <p>From fire to flavour</p>

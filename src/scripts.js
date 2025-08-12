@@ -1,4 +1,6 @@
-const swiper = new Swiper('.swiper', {
+import Swiper from 'swiper';
+export function initScripts() {
+    const swiper = new Swiper('.swiper', {
     loop: true,
     autoplay: {
         delay: 5000,
@@ -27,22 +29,23 @@ scrollBtn.addEventListener('click', () => {
     window.scrollTo({top: 0, behavior: 'smooth'});
 });
 
-const itemsContainer = document.getElementById('items');
-window.addEventListener('load', () => {
-    fetch('http://cyberacad-001-site1.rtempurl.com/api/Item/Get-All-Items', {method: 'GET'})
-    .then(response => response.json())
-    .then(data => {
-        let itemsHTML = '';
-        data.forEach(item => {
-            itemsHTML +=`<div class="menu-item">
-                <div class="image-wrapper"><img src="${item.imageUrl}" alt=""></div>
-                <h3>${item.name}</h3>
-                <p>${item.description}</p>
-                <p class= "price"> $${item.price}</p>                
-            </div>`;
-        });
+// const itemsContainer = document.getElementById('items');
+// window.addEventListener('load', () => {
+//     fetch('http://cyberacad-001-site1.rtempurl.com/api/Item/Get-All-Items', {method: 'GET'})
+//     .then(response => response.json())
+//     .then(data => {
+//         let itemsHTML = '';
+//         data.forEach(item => {
+//             itemsHTML +=`<div class="menu-item">
+//                 <div class="image-wrapper"><img src="${item.imageUrl}" alt=""></div>
+//                 <h3>${item.name}</h3>
+//                 <p>${item.description}</p>
+//                 <p class= "price"> $${item.price}</p>                
+//             </div>`;
+//         });
 
-        itemsContainer.innerHTML = itemsHTML;
-    })
+//         itemsContainer.innerHTML = itemsHTML;
+//     })
+// }
+// );
 }
-);
